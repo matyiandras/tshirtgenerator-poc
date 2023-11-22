@@ -27,12 +27,7 @@ export const Gallery = () => {
                 {generations.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {generations.map((generation) => (
-                            <div key={generation.id} className="flex flex-col items-center">
-                                <div className="w-64 h-64 bg-gray-200 rounded-lg overflow-hidden">
-                                    <GalleryImage imageUrl={generation.url} prompt={generation.prompt} />
-                                </div>
-                                <p className="text-gray-800 text-lg font-semibold mt-4">{generation.prompt}</p>
-                            </div>
+                            <GalleryImage imageUrl={generation.url} prompt={generation.prompt} />
                         ))}
                     </div>
                 ) : (

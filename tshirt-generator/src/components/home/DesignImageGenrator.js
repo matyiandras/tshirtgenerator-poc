@@ -4,6 +4,7 @@ import { Button, TextInput } from 'flowbite-react';
 import { getDatabase, ref as dbRef, set } from 'firebase/database';
 import { getStorage, ref as strRef, uploadString, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
+import { API_URL } from '../../globals/api';
 
 function DesignImageGenerator() {
 
@@ -31,7 +32,7 @@ function DesignImageGenerator() {
         try {
             // Send a POST request to your backend endpoint
             setLoading(true);
-            const response = axios.post('http://localhost:3001/generate-image', { prompt }).then((response) => {
+            const response = axios.post(`${API_URL}/generate-image`, { prompt }).then((response) => {
                 console.log(response);
                 // Make sure this matches the key sent from your backend
 
@@ -57,7 +58,7 @@ function DesignImageGenerator() {
             }).catch((err) => {
                 console.log(err);
             }).finally(() => {
-
+                setLoading(false);
             });
 
         } catch (error) {
