@@ -81,7 +81,7 @@ export const Gallery = () => {
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                             {Array.from(shirtGenerations.keys()).map((prompt) => (
                                 <div className='pb-6'>
-                                    <div className='flex justify-start text-gray-800 text-xl font-semibold pb-4'>
+                                    <div className='flex justify-start text-gray-800 text-xl font-semibold h-16'>
                                         <p>{prompt}</p>
                                     </div>
                                     <div >

@@ -52,7 +52,7 @@ function TShirtGenerator() {
                         getDownloadURL(snapshot.ref).then((downloadURL) => {
                             console.log('File available at', downloadURL);
                             setImageUrls((imageUrls) => [...imageUrls, downloadURL]);
-                            const urlRef = dbRef(database, `generations/${generationId}/designs`);
+                            const urlRef = dbRef(database, `generations/tshirt-designs/${generationId}/designs`);
                             push(urlRef, downloadURL);
                             setLoading(false);
                         });
@@ -100,7 +100,7 @@ function TShirtGenerator() {
             </div>
             <div className='flex w-full justify-center'>
                 <div className='w-full flex flex-col gap-4 justify-between py-8 md:flex-row lg:w-3/5'>
-                    <TextInput className='flex-auto w-full' value={theme} onChange={handleInputChange} />
+                    <TextInput className='flex-auto w-full' value={theme} placeholder='A theme for the designs...' onChange={handleInputChange} />
                     <Button className='flex-auto md:w-64' gradientMonochrome="info" isProcessing={loading} processingLabel='Generating...' onClick={handleSubmit}>Generate Designs</Button>
                 </div>
             </div>

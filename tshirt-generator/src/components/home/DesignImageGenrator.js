@@ -77,7 +77,7 @@ function DesignImageGenerator() {
             </div>
             <div className='flex w-full justify-center'>
                 <div className='flex gap-4 justify-between py-8 w-[512px]'>
-                    <TextInput className='flex flex-1' value={prompt} onChange={handleInputChange} />
+                    <TextInput className='flex flex-1' placeholder='A prompt for the image...' value={prompt} onChange={handleInputChange} />
                     <Button gradientMonochrome="info" isProcessing={loading} processingLabel='Generating...' onClick={handleSubmit}>Generate Image</Button>
                 </div>
             </div>
